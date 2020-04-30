@@ -30,6 +30,7 @@ body {
     background-color: #ffaa67;
     background-image: linear-gradient(to bottom right, #ffaa67, #ff2b76);
     border-radius: 25px;
+    position: relative;
 }
 
 #titlePic {
@@ -42,17 +43,26 @@ body {
 
 #triviaTitle {
     position: relative;
-    left: 48%;
+    left: 47%;
     font-size: 50px;
 }
 
 #startBanner {
     width: 100%;
-    height: 100px;
+    height: 130px;
     background-color: antiquewhite;
+    margin-top: 200px;
+    margin-bottom: 100px;
 }
 
 #startButton {
+    position: relative;
     background-color: #ff2b76;
     color: antiquewhite;
+    font-family: 'kothFont';
+    font-size: 70px;
+    left: 45%;
+    margin-top: 22px;
+    border: none;
+    border-radius: 15px;
 }
