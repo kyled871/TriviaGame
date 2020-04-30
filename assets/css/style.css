@@ -1,0 +1,58 @@
+html {
+    height: 100%;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    font-family: 'kothFont';
+}
+
+@font-face {
+    font-family: 'kothFont';
+    src: url('../koth_font.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image: url(../images/vaporwave_bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+}
+
+#container {
+    margin: 45px auto;
+    width: 80%;
+    height: 90%;
+    background-color: #ffaa67;
+    background-image: linear-gradient(to bottom right, #ffaa67, #ff2b76);
+    border-radius: 25px;
+}
+
+#titlePic {
+    position: relative;
+    left: 37%;
+    width: 420px;
+    height: 160px;
+    margin-bottom: -25px;
+}
+
+#triviaTitle {
+    position: relative;
+    left: 48%;
+    font-size: 50px;
+}
+
+#startBanner {
+    width: 100%;
+    height: 100px;
+    background-color: antiquewhite;
+}
+
+#startButton {
+    background-color: #ff2b76;
+    color: antiquewhite;
+}
