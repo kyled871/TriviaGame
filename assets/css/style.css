@@ -48,8 +48,6 @@ body {
 }
 
 #startBanner {
-    /* ------------ remove hidden after other project part is done... */
-    visibility: hidden;
     width: 100%;
     height: 130px;
     background-color: antiquewhite;

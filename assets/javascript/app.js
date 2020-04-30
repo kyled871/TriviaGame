@@ -3,6 +3,8 @@ $(document).ready(function() {
     let correct = 0
     let incorrect = 0
 
+    let gameTimer = 10
+
     const gameQuestions = [
         {
             question: "What does Hank sell for a living?",
@@ -23,11 +25,13 @@ $(document).ready(function() {
         },
     ]
 
-    function randomQuestion() {
-        randomQues = gameQuestions[Math.floor(Math.random() * gameQuestions.length)]
-        console.log(randomQues)
-    }
 
-    
+
+
+    $('#startButton').on('click', function() {
+        $('#startBanner').hide();
+        let randomQues = gameQuestions[Math.floor(Math.random() * gameQuestions.length)]
+        console.log(randomQues)
+    });
 
 });
