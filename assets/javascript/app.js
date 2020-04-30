@@ -23,6 +23,11 @@ $(document).ready(function() {
         },
     ]
 
+    function randomQuestion() {
+        randomQues = gameQuestions[Math.floor(Math.random() * gameQuestions.length)]
+        console.log(randomQues)
+    }
+
     
 
 });
