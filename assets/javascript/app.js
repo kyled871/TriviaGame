@@ -1,9 +1,10 @@
 $(document).ready(function() { 
 
-    let correct = 0
-    let incorrect = 0
+    let win = 0
+    let losses = 0
 
     let gameTimer = 10
+
 
     const gameQuestions = [
         {
@@ -28,18 +29,55 @@ $(document).ready(function() {
 
 
 
+    // clicking start, removes start banner & shows the random question and answers -------
     $('#startButton').on('click', function() {
         $('#startBanner').hide();
         let randomQues = gameQuestions[Math.floor(Math.random() * gameQuestions.length)]
-        console.log(randomQues)
 
+        // randomly chosen question with 4 choices
         $('#questionSection').text("Question: " + randomQues.question)
-        $('#choicesSection').append('<p class="choices">' + randomQues.choices[0] + '</p>')
-        $('#choicesSection').append('<p class="choices">' + randomQues.choices[1] + '</p>')
-        $('#choicesSection').append('<p class="choices">' + randomQues.choices[2] + '</p>')
-        $('#choicesSection').append('<p class="choices">' + randomQues.choices[3] + '</p>')
+        $('#choicesSection').append('<p class="choice1">' + randomQues.choices[0] + '</p>')
+        $('#choicesSection').append('<p class="choice2">' + randomQues.choices[1] + '</p>')
+        $('#choicesSection').append('<p class="choice3">' + randomQues.choices[2] + '</p>')
+        $('#choicesSection').append('<p class="choice4">' + randomQues.choices[3] + '</p>')
+
+
+
+        // if user clicks the correct choice they win 1 point
+        $('.choice1').on('click', function() {
+            if (randomQues.choices[0] === randomQues.answer) {
+                win++
+                $('#wins').html('Wins: ' + win)
+            } else if (randomQues.choices[0] !== randomQues.answer) {
+                losses++
+                $('#losses').html('Losses: ' + losses)
+            }
+        })
+
+        $('.choice2').on('click', function() {
+            if (randomQues.choices[1] === randomQues.answer) {
+                win++
+                $('#wins').html('Wins: ' + win)
+            } else if (randomQues.choices[1] !== randomQues.answer) {
+                losses++
+                $('#losses').html('Losses: ' + losses)
+            }
+        })
+
+        $('.choice3').on('click', function() {
+            if (randomQues.choices[2] === randomQues.answer) {
+                win++
+                $('#wins').html('Wins: ' + win)
+            }
+        })
+
+        $('.choice4').on('click', function() {
+            if (randomQues.choices[3] === randomQues.answer) {
+                win++
+                $('#wins').html('Wins: ' + win)
+            }
+        })
 
     });
-
 
 });
