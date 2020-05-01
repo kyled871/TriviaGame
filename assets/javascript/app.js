@@ -19,7 +19,7 @@ $(document).ready(function() {
         },
 
         {
-            question: "Kahn is Hank's neighbor. What is the name of their daughter?",
+            question: "Kahn is Hank's neighbor. What is the name of his daughter?",
             choices: ['Kahn Souphanousinphone Jr', 'Dale', 'Connie', 'Lou Anne'],
             answer: 'Kahn Souphanousinphone Jr',
         },
@@ -32,6 +32,14 @@ $(document).ready(function() {
         $('#startBanner').hide();
         let randomQues = gameQuestions[Math.floor(Math.random() * gameQuestions.length)]
         console.log(randomQues)
+
+        $('#questionSection').text("Question: " + randomQues.question)
+        $('#choicesSection').append('<p class="choices">' + randomQues.choices[0] + '</p>')
+        $('#choicesSection').append('<p class="choices">' + randomQues.choices[1] + '</p>')
+        $('#choicesSection').append('<p class="choices">' + randomQues.choices[2] + '</p>')
+        $('#choicesSection').append('<p class="choices">' + randomQues.choices[3] + '</p>')
+
     });
+
 
 });
