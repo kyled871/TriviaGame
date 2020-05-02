@@ -81,24 +81,13 @@ body {
     left: 35%;
 }
 
-.choice1:hover {
+.choice:hover {
     opacity: 60%;
     cursor: pointer;
 }
 
-.choice2:hover {
-    opacity: 60%;
-    cursor: pointer;
+#wins, #losses {
+    position: relative;
+    font-size: 50px;
+    margin-left: 20px;
 }
-
-.choice3:hover {
-    opacity: 60%;
-    cursor: pointer;
-}
-
-.choice4:hover {
-    opacity: 60%;
-    cursor: pointer;
-}
-
-
