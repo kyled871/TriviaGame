@@ -86,8 +86,16 @@ body {
     cursor: pointer;
 }
 
-#wins, #losses {
-    position: relative;
+#wins {
+    position: absolute;
     font-size: 50px;
     margin-left: 20px;
+    bottom: 55px;
+}
+
+#losses {
+    position: absolute;
+    font-size: 50px;
+    margin-left: 20px;
+    bottom: 0;
 }
