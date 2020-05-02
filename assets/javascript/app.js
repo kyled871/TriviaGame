@@ -3,9 +3,6 @@ $(document).ready(function() {
     let win = 0
     let losses = 0
 
-    let roundTimer = 10
-
-
     const gameQuestions = [
         {
             question: "What does Hank sell for a living?",
@@ -24,10 +21,37 @@ $(document).ready(function() {
             choices: ['Kahn Souphanousinphone Jr', 'Dale', 'Connie', 'Lou Anne'],
             answer: 'Kahn Souphanousinphone Jr',
         },
+
+        {
+            question: "What is name of the Hill's family dog?",
+            choices: ['Ladyblue', 'Birdy', 'Ladybird', 'Bluebird'],
+            answer: 'Ladybird',
+        },
+        
+        {
+            question: "What brand of beer do the guys like to drink?",
+            choices: ['budlight', 'heineken', 'propane jane', 'alamo'],
+            answer: 'alamo',
+        },
+
+        {
+            question: "What state does the show mainly take place?",
+            choices: ['florida', 'arlington', 'texas', 'oklahoma'],
+            answer: 'texas',
+        },
+
+        {
+            question: "What is Dale's pest control company's name?",
+            choices: ['Spray Ya Later', 'Dales Dead Bug', 'mr. kill', 'dales pest control'],
+            answer: 'Dales Dead Bug',
+        },
+
+        {
+            question: "Peggy is a champion at which word game?",
+            choices: ['Scrabble', 'Boggle', 'Crossword Puzzles', 'Alphabear'],
+            answer: 'Kahn Souphanousinphone Jr',
+        },
     ]
-
-
-
 
 
 
@@ -38,6 +62,21 @@ $(document).ready(function() {
         $('#startBanner').hide();
 
         function gameCycle() {
+
+
+            timeLeft = 10
+
+            let countDown = setInterval(function() {
+                if(timeLeft <= 0) {
+                    alert('Times up');
+                    gameCycle()
+                }
+                else {
+                    $('#timeLeft').html('Time Left: ' + timeLeft)
+                }
+                timeLeft -= 1;
+            }, 1000);
+
             let randomQues = gameQuestions[Math.floor(Math.random() * gameQuestions.length)]
             // randomly chosen question with 4 choices
             $('#questionSection').text("Question: " + randomQues.question)
@@ -58,6 +97,7 @@ $(document).ready(function() {
                     $('.choice3').html('')
                     $('.choice4').html('')
                     gameCycle()
+                    clearInterval(countDown)
     
                 } else if (randomQues.choices[0] !== randomQues.answer) {
                     losses++
@@ -70,6 +110,7 @@ $(document).ready(function() {
                     $('.choice3').html('')
                     $('.choice4').html('')
                     gameCycle()
+                    clearInterval(countDown)
                 }
             })
 
@@ -85,6 +126,7 @@ $(document).ready(function() {
                     $('.choice3').html('')
                     $('.choice4').html('')
                     gameCycle()
+                    clearInterval(countDown)
     
                 } else if (randomQues.choices[1] !== randomQues.answer) {
                     losses++
@@ -97,6 +139,7 @@ $(document).ready(function() {
                     $('.choice3').html('')
                     $('.choice4').html('')
                     gameCycle()
+                    clearInterval(countDown)
                 }
             })
 
@@ -112,6 +155,7 @@ $(document).ready(function() {
                     $('.choice3').html('')
                     $('.choice4').html('')
                     gameCycle()
+                    clearInterval(countDown)
     
                 } else if (randomQues.choices[2] !== randomQues.answer) {
                     losses++
@@ -124,6 +168,7 @@ $(document).ready(function() {
                     $('.choice3').html('')
                     $('.choice4').html('')
                     gameCycle()
+                    clearInterval(countDown)
                 }
             })
 
@@ -139,6 +184,7 @@ $(document).ready(function() {
                     $('.choice3').html('')
                     $('.choice4').html('')
                     gameCycle()
+                    clearInterval(countDown)
     
                 } else if (randomQues.choices[3] !== randomQues.answer) {
                     losses++
@@ -151,6 +197,7 @@ $(document).ready(function() {
                     $('.choice3').html('')
                     $('.choice4').html('')
                     gameCycle()
+                    clearInterval(countDown)
                 }
             })
         }

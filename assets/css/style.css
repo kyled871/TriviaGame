@@ -81,7 +81,22 @@ body {
     left: 35%;
 }
 
-.choice:hover {
+.choice1:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
+.choice2:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
+.choice3:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
+.choice4:hover {
     opacity: 60%;
     cursor: pointer;
 }
