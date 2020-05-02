@@ -65,17 +65,31 @@ $(document).ready(function() {
 
 
             timeLeft = 10
+            $('#timeLeft').html('Time Left: ' + timeLeft)
 
             let countDown = setInterval(function() {
                 if(timeLeft <= 0) {
-                    alert('Times up');
+                    $('#timeLeft').html("Time's Up!!!")
+                    $('#questionSection').html('')
+                    $('.choice1').html('')
+                    $('.choice2').html('')
+                    $('.choice3').html('')
+                    $('.choice4').html('')
                     gameCycle()
+                    clearInterval(countDown)
+                    losses++
+                    $('#losses').html('Losses: ' + losses)
+
                 }
                 else {
                     $('#timeLeft').html('Time Left: ' + timeLeft)
                 }
                 timeLeft -= 1;
             }, 1000);
+
+
+
+
 
             let randomQues = gameQuestions[Math.floor(Math.random() * gameQuestions.length)]
             // randomly chosen question with 4 choices
