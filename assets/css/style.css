@@ -114,3 +114,8 @@ body {
     margin-left: 20px;
     bottom: 0;
 }
+
+#startButton:hover {
+    opacity: 60%;
+    cursor: pointer;
+}

@@ -3,6 +3,7 @@ $(document).ready(function() {
     let win = 0
     let losses = 0
 
+
     const gameQuestions = [
         {
             question: "What does Hank sell for a living?",
@@ -61,34 +62,32 @@ $(document).ready(function() {
 
         $('#startBanner').hide();
 
+
+
         function gameCycle() {
-
-
             timeLeft = 10
             $('#timeLeft').html('Time Left: ' + timeLeft)
 
             let countDown = setInterval(function() {
                 if(timeLeft <= 0) {
-                    $('#timeLeft').html("Time's Up!!!")
-                    $('#questionSection').html('')
-                    $('.choice1').html('')
-                    $('.choice2').html('')
-                    $('.choice3').html('')
-                    $('.choice4').html('')
-                    gameCycle()
-                    clearInterval(countDown)
                     losses++
                     $('#losses').html('Losses: ' + losses)
-
-                }
-                else {
+                    $('#timeLeft').html("Time's Up! Answer was: " + randomQues.answer + ".")
+                    clearInterval(countDown)
+                    setTimeout (function() {
+                        $('#questionSection').html('')
+                        $('.choice1').html('')
+                        $('.choice2').html('')
+                        $('.choice3').html('')
+                        $('.choice4').html('')
+                        gameCycle()
+                        clearInterval(countDown)
+                    }, 5000)
+                } else {
                     $('#timeLeft').html('Time Left: ' + timeLeft)
                 }
                 timeLeft -= 1;
             }, 1000);
-
-
-
 
 
             let randomQues = gameQuestions[Math.floor(Math.random() * gameQuestions.length)]
@@ -98,6 +97,7 @@ $(document).ready(function() {
             $('#choicesSection').append('<p class="choice2">' + randomQues.choices[1] + '</p>')
             $('#choicesSection').append('<p class="choice3">' + randomQues.choices[2] + '</p>')
             $('#choicesSection').append('<p class="choice4">' + randomQues.choices[3] + '</p>')
+
     
             $('.choice1').on('click', function() {
                 if (randomQues.choices[0] === randomQues.answer) {
