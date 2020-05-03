@@ -115,6 +115,12 @@ body {
     bottom: 0;
 }
 
+#timeLeft {
+    position: relative;
+    font-size: 50px;
+    margin-left: 570px;
+}
+
 #startButton:hover {
     opacity: 60%;
     cursor: pointer;
